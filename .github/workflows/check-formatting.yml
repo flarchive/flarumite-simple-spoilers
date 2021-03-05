@@ -1,0 +1,32 @@
+name: Smoketest
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-formatting:
+    runs-on: ubuntu-latest
+    name: Check formatting with Prettier
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          # Make sure the actual branch is checked out when running on pull requests
+          ref: ${{ github.head_ref }}
+
+      - name: Set up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Prettier
+        run: npm i -g prettier
+
+      - name: Check formatting
+        run: prettier --check **/*.{less,json,md,yml}

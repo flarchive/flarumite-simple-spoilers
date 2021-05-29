@@ -1,0 +1,107 @@
+.flarumite-spoiler {
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+
+  // If we have spoilers within spoilers, add border to make it obvious
+  & > .flarumite-spoiler--content > &[open] {
+    .setBorderColor();
+
+    .setBorderColor() when (@config-dark-mode = true) {
+      @flarumite-spoiler--embedded-border-color: #555;
+    }
+    .setBorderColor() when (@config-dark-mode = false) {
+      @flarumite-spoiler--embedded-border-color: #ccc;
+    }
+
+    > summary {
+      border: 1px solid @flarumite-spoiler--embedded-border-color;
+      border-bottom: none;
+    }
+
+    > .flarumite-spoiler--content {
+      border: 1px solid @flarumite-spoiler--embedded-border-color;
+      border-top: none;
+
+      // Match BR of toggle
+      border-bottom-left-radius: @border-radius;
+      border-bottom-right-radius: @border-radius;
+    }
+  }
+
+  summary {
+    cursor: pointer;
+    color: @control-color;
+
+    // Remove the little arrow which shows
+    list-style: none;
+
+    // Chrome is a pain in the backside and
+    // likes making it's own dumb standards
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    .Button();
+
+    width: 100%;
+
+    border-bottom: none;
+
+    .flarumite-spoiler--title {
+      .flarumite-spoiler--default-text {
+        display: none;
+      }
+
+      .flarumite-spoiler--custom-text:empty {
+        display: none;
+
+        ~ .flarumite-spoiler--default-text {
+          display: inline;
+        }
+      }
+    }
+
+    .flarumite-spoiler--title-open {
+      display: none;
+    }
+  }
+
+  &[open] > summary {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    // Automatically change between text when expanded/hidden
+    .flarumite-spoiler--title-closed {
+      display: none;
+    }
+
+    .flarumite-spoiler--title-open {
+      display: inline;
+    }
+  }
+
+  .flarumite-spoiler--content {
+    padding: 12px;
+
+    background: @control-bg;
+
+    // add shadow effect
+
+    .setShadow();
+
+    .setShadow() when (@config-dark-mode = false) {
+      background-image: linear-gradient(to bottom, fade(@shadow-color, 20%) 0, transparent 4px);
+    }
+
+    .setShadow() when (@config-dark-mode = true) {
+      // background: @control-bg;
+      background-image: linear-gradient(to bottom, fade(@shadow-color, 20%) 0, transparent 4px);
+    }
+
+    // Remove spacing from last paragraph in spoiler
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

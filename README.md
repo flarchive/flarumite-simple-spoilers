@@ -2,13 +2,16 @@
 
 > **Read-only archive of released versions of flarumite/simple-spoilers.** Not for installation: use [Packagist](https://packagist.org/packages/flarumite/simple-spoilers) or the [upstream repository](https://github.com/flarumite/simple-spoilers).
 
-**0** versions archived · Latest: [`1.0.0`](https://github.com/flarchive/flarumite-simple-spoilers/tree/archive/v1.0.0) · License: `MIT` · Flarum: `^1.0`
+**4** versions archived · Latest: [`1.0.0`](https://github.com/flarchive/flarumite-simple-spoilers/tree/archive/v1.0.0) · License: `MIT` · Flarum: `^1.0`
 
 ## Archived Versions
 
 | Version | Released | Flarum | Source |
 |---|---|---|---|
-| — | — | — | — |
+| `0.1.0` | 2021-03-05 | `^0.1.0-beta.15` | [Browse](https://github.com/flarchive/flarumite-simple-spoilers/tree/archive/v0.1.0) |
+| `0.1.1` | 2021-03-05 | `^0.1.0-beta.15` | [Browse](https://github.com/flarchive/flarumite-simple-spoilers/tree/archive/v0.1.1) |
+| `0.1.2` | 2021-03-06 | `^0.1.0-beta.15` | [Browse](https://github.com/flarchive/flarumite-simple-spoilers/tree/archive/v0.1.2) |
+| `1.0.0` | 2021-05-29 | `^1.0` | [Browse](https://github.com/flarchive/flarumite-simple-spoilers/tree/archive/v1.0.0) |
 
 Catalog entry: [packages/flarumite-simple-spoilers.json](https://github.com/flarchive/archive-index/blob/main/packages/flarumite-simple-spoilers.json)
 
